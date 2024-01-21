@@ -84,7 +84,8 @@ def play_tic_tac_toe():
         for i in range(3):
             col1, col2, col3 = st.columns([1, 1, 1])
             for j in range(3):
-                button_label = st.session_state.board[i * 3 + j]
+                index = i * 3 + j
+                button_label = st.session_state.board[index]
                 col = col1 if j == 0 else col2 if j == 1 else col3
                 col.button(str(button_label), key=(i, j), on_click=on_button_click, args=(i, j))
 
